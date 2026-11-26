@@ -119,6 +119,7 @@ footer{background:#edf3fb}
  :root[data-theme=dark]{
   color-scheme:dark;
   --bg:#09090b;--surface:#151518;--soft:#232327;--line:#38383f;
+  --card:#182231;--card-line:#344458;
   --paper:#f1f1f3;--dim:#c0c0c8;--accent:#b1c4de;
   --gold-ink:#e1c18a;--gold-mark:#bb9560;--gold-wash:#29241d;--gold-line:#6c563f;
  }
@@ -135,11 +136,12 @@ footer{background:#edf3fb}
  :root[data-theme=dark] .language button[aria-pressed=true],:root[data-theme=dark] .filters button[aria-pressed=true]{color:#171a1f}
  :root[data-theme=dark] .primary:hover{background:#c9d7e9}
  :root[data-theme=dark] .secondary{background:#17171a}
- :root[data-theme=dark] .flow{border-color:var(--line);border-top-color:var(--gold-mark);background:radial-gradient(ellipse at 97% 0%,rgba(181,137,69,.08),transparent 65%),linear-gradient(135deg,#202024,#151518 66%);box-shadow:0 18px 42px #00000066}
+ :root[data-theme=dark] :is(.job,.project,.tech,.credentials article){background:var(--card);border-color:var(--card-line)}
+ :root[data-theme=dark] .flow{border-color:var(--card-line);border-top-color:var(--gold-mark);background:radial-gradient(ellipse at 97% 0%,rgba(181,137,69,.08),transparent 65%),linear-gradient(135deg,#202d40,var(--card) 72%);box-shadow:0 18px 42px #00000066}
  :root[data-theme=dark] .step:not(:last-child):after{border-left-color:#74747c}
- :root[data-theme=dark] .flow-foot span,:root[data-theme=dark] .chips span{background:#24242a;color:#d7d7de}
- :root[data-theme=dark] .job[open]{border-color:#4d4d56}
- :root[data-theme=dark] .job summary:hover{background:#222227}
+ :root[data-theme=dark] .flow-foot span,:root[data-theme=dark] .chips span{background:#263347;color:#d7d7de}
+ :root[data-theme=dark] .job[open]{border-color:#495e78}
+ :root[data-theme=dark] .job summary:hover{background:#202e41}
  :root[data-theme=dark] .related-projects a:hover{color:var(--gold-ink)}
  :root[data-theme=dark] .tech-icon .monogram{color:#264b78}
  :root[data-theme=dark] .shot-dialog::backdrop{background:#040405e0}
