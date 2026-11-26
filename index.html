@@ -107,9 +107,52 @@ footer{background:#edf3fb}
  .project-controls-ready .project-group .projects{padding:0}
  .project-controls-ready .project-empty{padding:0 0 12px}
 }
-</style></head><body>
+
+/* Dark edition is opt-in; printing keeps the light palette. */
+.theme-toggle{display:none}
+@media screen{
+ .top-tools{display:flex;align-items:center;gap:8px;justify-self:end}
+ .theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:0 10px;border:1px solid var(--line);border-radius:9px;background:var(--soft);color:var(--paper);font-size:.8rem;font-weight:750}
+ .theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+ .theme-toggle svg{width:16px;height:16px;flex:none}
+ .theme-sun{display:none}
+ :root[data-theme=dark]{
+  color-scheme:dark;
+  --bg:#0a101c;--surface:#111c2e;--soft:#192841;--line:#30425e;
+  --paper:#edf3fb;--dim:#b7c6db;--accent:#a1c7ff;
+  --gold-ink:#e1c18a;--gold-mark:#bb9560;--gold-wash:#2a2630;--gold-line:#6c563f;
+ }
+ :root[data-theme=dark] body{
+  background:
+   radial-gradient(ellipse 48rem 34rem at 96% 17rem,rgba(181,137,69,.11),transparent 70%),
+   radial-gradient(ellipse 68rem 42rem at 10% 6rem,rgba(37,84,158,.33),transparent 74%),
+   linear-gradient(153deg,#0b1425 0%,#0a101c 51%,#101c30 100%);
+  background-color:var(--bg);
+ }
+ :root[data-theme=dark] .top{background:#0c1525f2}
+ :root[data-theme=dark] .top .brand{color:var(--paper)}
+ :root[data-theme=dark] .skip,:root[data-theme=dark] .brand-icon,:root[data-theme=dark] .primary,
+ :root[data-theme=dark] .language button[aria-pressed=true],:root[data-theme=dark] .filters button[aria-pressed=true]{color:#0b1b32}
+ :root[data-theme=dark] .primary:hover{background:#c0dcff}
+ :root[data-theme=dark] .secondary{background:#101c2d}
+ :root[data-theme=dark] .flow{border-color:var(--line);border-top-color:var(--gold-mark);background:radial-gradient(ellipse at 97% 0%,rgba(181,137,69,.12),transparent 65%),linear-gradient(135deg,#192c48,#111c2e 66%);box-shadow:0 18px 42px #03071055}
+ :root[data-theme=dark] .step:not(:last-child):after{border-left-color:#6680a4}
+ :root[data-theme=dark] .flow-foot span,:root[data-theme=dark] .chips span{background:#1b2c46;color:#cadaf0}
+ :root[data-theme=dark] .job[open]{border-color:#526b8f}
+ :root[data-theme=dark] .job summary:hover{background:#192842}
+ :root[data-theme=dark] .related-projects a:hover{color:var(--gold-ink)}
+ :root[data-theme=dark] .tech-icon .monogram{color:#264b78}
+ :root[data-theme=dark] .shot-dialog::backdrop{background:#050a14de}
+ :root[data-theme=dark] footer{background:#0b1423}
+ :root[data-theme=dark] .theme-moon{display:none}
+ :root[data-theme=dark] .theme-sun{display:block;color:var(--gold-ink)}
+ @media(max-width:620px){.top-tools{grid-column:2;grid-row:1;gap:5px}}
+ @media(max-width:460px){.theme-toggle{padding:0 8px;min-width:42px}.theme-toggle .theme-text{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+ @media(max-width:365px){.brand>span:last-child{display:none}}
+}
+</style><script>if(new URLSearchParams(location.search).get('tema')==='escuro')document.documentElement.dataset.theme='dark';</script></head><body>
 <a class="skip" href="#perfil"><span data-en="Skip to content">Pular para o conteúdo</span></a>
-<header class="top"><div class="shell top-inner"><a href="#perfil" class="brand" aria-label="Mario Gabriel Warnava Natel"><span class="brand-icon" aria-hidden="true">MN</span><span>Mario Warnava Natel</span></a><nav aria-label="Seções" data-en-label="Sections"><a class="" href="#perfil"><span data-en="Profile">Perfil</span></a><a class="" href="#experiencia"><span data-en="Experience">Experiência</span></a><a class="" href="#projetos"><span data-en="Projects">Projetos</span></a><a class="" href="#tecnologias"><span data-en="Technology">Tecnologias</span></a><a class="" href="#formacao"><span data-en="Education">Formação</span></a></nav><div class="language" role="group" aria-label="Idioma" data-en-label="Language"><button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button></div></div></header>
+<header class="top"><div class="shell top-inner"><a href="#perfil" class="brand" aria-label="Mario Gabriel Warnava Natel"><span class="brand-icon" aria-hidden="true">MN</span><span>Mario Warnava Natel</span></a><nav aria-label="Seções" data-en-label="Sections"><a class="" href="#perfil"><span data-en="Profile">Perfil</span></a><a class="" href="#experiencia"><span data-en="Experience">Experiência</span></a><a class="" href="#projetos"><span data-en="Projects">Projetos</span></a><a class="" href="#tecnologias"><span data-en="Technology">Tecnologias</span></a><a class="" href="#formacao"><span data-en="Education">Formação</span></a></nav><div class="top-tools"><button type="button" class="theme-toggle" hidden><svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 14a8.9 8.9 0 0 1-10.9-10.8A9 9 0 1 0 20.8 14Z"/></svg><svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M19 5l-1.5 1.5m-11 11L5 19"/></svg><span class="theme-text"></span></button><div class="language" role="group" aria-label="Idioma" data-en-label="Language"><button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button></div></div></div></header>
 <main id="conteudo" class="shell">
 <section id="perfil" class="hero"><div class="intro">
 <div class="eyebrow"><i></i><span data-en="PORTO ALEGRE, BRAZIL">PORTO ALEGRE, BRASIL</span></div>
@@ -181,8 +224,28 @@ footer{background:#edf3fb}
   translated.forEach(el=>{el.textContent=en?el.dataset.en:el.dataset.pt});
   labels.forEach(el=>el.setAttribute('aria-label',en?el.dataset.enLabel:el.dataset.ptLabel));
   langs.forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.lang===(en?'en':'pt'))));
+  syncThemeButton();
  }
  langs.forEach(el=>el.addEventListener('click',()=>setLanguage(el.dataset.lang==='en')));
+
+ const themeToggle=document.querySelector('.theme-toggle');
+ const themeText=themeToggle.querySelector('.theme-text');
+ function syncThemeButton(){
+  const dark=document.documentElement.dataset.theme==='dark';
+  const en=document.documentElement.lang==='en';
+  themeText.textContent=en?(dark?'Light':'Dark'):(dark?'Claro':'Escuro');
+  themeToggle.setAttribute('aria-label',en?(dark?'Switch to light theme':'Switch to dark theme'):(dark?'Ativar tema claro':'Ativar tema escuro'));
+ }
+ themeToggle.hidden=false;
+ syncThemeButton();
+ themeToggle.addEventListener('click',()=>{
+  const root=document.documentElement;
+  const url=new URL(location.href);
+  if(root.dataset.theme==='dark'){delete root.dataset.theme;url.searchParams.delete('tema');}
+  else{root.dataset.theme='dark';url.searchParams.set('tema','escuro');}
+  history.replaceState(history.state,'',url);
+  syncThemeButton();
+ });
  const buttons=[...document.querySelectorAll('[data-filter]')];
  const cards=[...document.querySelectorAll('[data-cat]')];
  buttons.forEach(el=>el.addEventListener('click',()=>{
